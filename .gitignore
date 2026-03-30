@@ -1,16 +1,20 @@
-# Python-generated files
+# Python
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
 *.egg-info
+.venv/
 
-# Virtual environments
-.venv
+# MkDocs
+site/
 
 # IntelliJ IDEA
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/shelf/
 .idea/*.xml.bak
+
+# OS
+.DS_Store

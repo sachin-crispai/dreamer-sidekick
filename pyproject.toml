@@ -1,7 +1,21 @@
 [project]
-name = "crispai-dreamer-sidekick"
+name = "dreamer-sidekick"
 version = "0.1.0"
-description = "Add your description here"
+description = "Curated inventory of tools for researching and building pet projects"
 readme = "README.md"
 requires-python = ">=3.13.2"
 dependencies = []
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocs-awesome-pages-plugin>=2.9",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
