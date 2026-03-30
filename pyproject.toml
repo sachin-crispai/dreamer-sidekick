@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Curated inventory of tools for researching and building pet projects"
 readme = "README.md"
 requires-python = ">=3.13.2"
-dependencies = []
+dependencies = [
+    "crispai-blueprint",
+]
 
 [project.optional-dependencies]
 docs = [
@@ -19,3 +21,6 @@ dev = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.uv.sources]
+crispai-blueprint = { path = "../../CRISPAI-BLUEPRINT" }

@@ -2,6 +2,41 @@
 
 This file is read by every Claude session working in this repository.
 
+## Blueprint
+Standards, templates, and best practices: /Volumes/WORK900_CRISPAI/CRISPAI-BLUEPRINT
+- New project checklist:  docs/guides/new-project-checklist.md
+- Model routing table:    docs/practices/model-routing.md
+- API key conventions:    docs/practices/api-keys.md
+- Worktree guide:         docs/practices/worktree.md
+- General best practices: docs/practices/general.md
+
+## API Keys
+Keys follow convention: `CRISPAI-<VENDOR>-<PROJECT-ID>`
+
+| Key | Used For |
+|-----|----------|
+| `CRISPAI-GEMINI-DREAMER-SIDEKICK` | Web search, light research (flash-lite / flash) |
+| `CRISPAI-NEBIUS-DREAMER-SIDEKICK` | Embeddings overflow, batch writing, fast structured output |
+| `CRISPAI-OPENAI-DREAMER-SIDEKICK` | GPT-4o / embeddings fallback |
+| `CRISPAI-ANTHROPIC-DREAMER-SIDEKICK` | Final QA, tool use, assembly (claude-sonnet-4-6) |
+| `CRISPAI-GITHUB-DREAMER-SIDEKICK` | GitHub API / repo automation |
+
+## Model Routing
+| Task | Model | Why |
+|------|-------|-----|
+| Summaries, drafts | `qwen2.5:32b-ctx128k` via Ollama | Free local |
+| Embeddings | `nomic-embed-text` via Ollama | Free local, 768-dim |
+| Web search | `gemini-2.5-flash-lite` via Gemini | Unlimited RPD |
+| Quality research | `gemini-2.5-flash` via Gemini | Better reasoning |
+| Long-form writing | `Qwen/Qwen3-235B-A22B-Instruct-2507` via Nebius batch | $0.10/$0.30 |
+| Reasoning | `deepseek-ai/DeepSeek-R1-0528` via Nebius | Chain-of-thought |
+| Fast structured output | `Qwen/Qwen3-32B-fast` via Nebius | Speed + structure |
+| Final QA + assembly | Claude Sonnet 4.6 | Tool use, consistency |
+
+## Nebius Endpoint
+Base URL: https://api.studio.nebius.com/v1/
+Auth: Bearer $CRISPAI-NEBIUS-DREAMER-SIDEKICK
+
 ## Repository Layout
 
 ```
