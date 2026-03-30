@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# IntelliJ IDEA
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/*.xml.bak
